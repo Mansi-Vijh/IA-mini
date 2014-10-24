@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartoonPaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CartoonPaint.Designer.cs">
+      <DependentUpon>CartoonPaint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

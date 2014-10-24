@@ -41,9 +41,9 @@
             // 
             // Result
             // 
-            this.Result.Location = new System.Drawing.Point(489, 55);
+            this.Result.Location = new System.Drawing.Point(343, 40);
             this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(482, 543);
+            this.Result.Size = new System.Drawing.Size(808, 555);
             this.Result.TabIndex = 2;
             this.Result.TabStop = false;
             // 
@@ -99,6 +99,7 @@
             this.btn_show.TabIndex = 8;
             this.btn_show.Text = "Show";
             this.btn_show.UseVisualStyleBackColor = true;
+            this.btn_show.Click += new System.EventHandler(this.btn_click);
             // 
             // OilPaint
             // 

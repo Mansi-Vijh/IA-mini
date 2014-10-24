@@ -44,7 +44,7 @@
             // 
             this.Original.Location = new System.Drawing.Point(121, 152);
             this.Original.Name = "Original";
-            this.Original.Size = new System.Drawing.Size(447, 553);
+            this.Original.Size = new System.Drawing.Size(666, 601);
             this.Original.TabIndex = 2;
             this.Original.TabStop = false;
             // 
