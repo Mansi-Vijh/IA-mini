@@ -83,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,6 +94,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\660px-Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\662px-Rosa_Iceberg_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Heidi-Klum-Rose_%28Tantau_2006%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rose_Amber_Flush_20070601.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
