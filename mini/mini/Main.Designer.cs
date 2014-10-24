@@ -32,6 +32,7 @@
             this.openFD = new System.Windows.Forms.OpenFileDialog();
             this.Original = new Emgu.CV.UI.ImageBox();
             this.btn_browse = new System.Windows.Forms.Button();
+            this.btn_paint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Original)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,11 +58,22 @@
             this.btn_browse.UseVisualStyleBackColor = true;
             this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click);
             // 
+            // btn_paint
+            // 
+            this.btn_paint.Location = new System.Drawing.Point(717, 87);
+            this.btn_paint.Name = "btn_paint";
+            this.btn_paint.Size = new System.Drawing.Size(130, 39);
+            this.btn_paint.TabIndex = 4;
+            this.btn_paint.Text = "Oil Painting ";
+            this.btn_paint.UseVisualStyleBackColor = true;
+            this.btn_paint.Click += new System.EventHandler(this.btn_paint_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 750);
+            this.Controls.Add(this.btn_paint);
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.Original);
             this.Name = "Main";
@@ -76,6 +88,7 @@
         private System.Windows.Forms.OpenFileDialog openFD;
         private Emgu.CV.UI.ImageBox Original;
         private System.Windows.Forms.Button btn_browse;
+        private System.Windows.Forms.Button btn_paint;
     }
 }
 

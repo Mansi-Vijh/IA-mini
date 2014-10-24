@@ -38,5 +38,11 @@ namespace mini
                 Original.Image = img;
             }
         }
+
+        private void btn_paint_Click(object sender, EventArgs e)
+        {
+            OilPaint f = new OilPaint(Chosen_File);
+            f.Show();
+        }
     }
 }
