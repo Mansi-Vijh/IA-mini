@@ -28,9 +28,9 @@ namespace mini
             float intensity = (float)Convert.ToDecimal(this.txt_l.Text);
             int i, j;
             Image<Bgr, Byte> input = new Image<Bgr, Byte>(img.Width + radius, img.Height + radius);
-            for (i = 0; i < img.Width; i++)
+            for (i = 0; i < img.Height; i++)
             {
-                for (j = 0; j < img.Height; j++)
+                for (j = 0; j < img.Width; j++)
                 {
                     if ((i + radius < input.Height) &&(i+radius>=0)&& (j + radius< input.Width)&&(j+radius>=0))
                     {
