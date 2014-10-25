@@ -18,8 +18,8 @@ namespace mini
         public OilPaint(string loc)
         {
             InitializeComponent();
-           // img = new Image<Bgr, byte>(loc);
-            img = new Image<Bgr, Byte>(Properties.Resources.Rose_Amber_Flush_20070601);
+            img = new Image<Bgr, byte>(loc);
+           // img = new Image<Bgr, Byte>(Properties.Resources.Rose_Amber_Flush_20070601);
         }
         private void btn_click(object sender, EventArgs e)
         {
@@ -28,12 +28,14 @@ namespace mini
             float intensity = (float)Convert.ToDecimal(this.txt_l.Text);
             int i, j;
             Image<Bgr, Byte> input = new Image<Bgr, Byte>(img.Width + radius, img.Height + radius);
+            
+            //transferring to bigger(padded) image :  "input"
             for (i = 0; i < img.Height; i++)
             {
                 for (j = 0; j < img.Width; j++)
                 {
                     if ((i + radius < input.Height) &&(i+radius>=0)&& (j + radius< input.Width)&&(j+radius>=0))
-                    {
+                    {      
                         input.Data[i + radius, j + radius, 0] = img.Data[i, j, 0];
                         input.Data[i + radius, j + radius, 1] = img.Data[i, j, 1];
                         input.Data[i + radius, j + radius, 2] = img.Data[i, j, 2];

@@ -30,23 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.openFD = new System.Windows.Forms.OpenFileDialog();
-            this.Original = new Emgu.CV.UI.ImageBox();
             this.btn_browse = new System.Windows.Forms.Button();
             this.btn_paint = new System.Windows.Forms.Button();
+            this.Original = new Emgu.CV.UI.ImageBox();
+            this.btn_cartoon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Original)).BeginInit();
             this.SuspendLayout();
             // 
             // openFD
             // 
             this.openFD.FileName = "openFileDialog1";
-            // 
-            // Original
-            // 
-            this.Original.Location = new System.Drawing.Point(121, 152);
-            this.Original.Name = "Original";
-            this.Original.Size = new System.Drawing.Size(666, 601);
-            this.Original.TabIndex = 2;
-            this.Original.TabStop = false;
             // 
             // btn_browse
             // 
@@ -60,7 +53,7 @@
             // 
             // btn_paint
             // 
-            this.btn_paint.Location = new System.Drawing.Point(717, 87);
+            this.btn_paint.Location = new System.Drawing.Point(841, 79);
             this.btn_paint.Name = "btn_paint";
             this.btn_paint.Size = new System.Drawing.Size(130, 39);
             this.btn_paint.TabIndex = 4;
@@ -68,11 +61,30 @@
             this.btn_paint.UseVisualStyleBackColor = true;
             this.btn_paint.Click += new System.EventHandler(this.btn_paint_Click);
             // 
+            // Original
+            // 
+            this.Original.Location = new System.Drawing.Point(121, 152);
+            this.Original.Name = "Original";
+            this.Original.Size = new System.Drawing.Size(666, 549);
+            this.Original.TabIndex = 2;
+            this.Original.TabStop = false;
+            // 
+            // btn_cartoon
+            // 
+            this.btn_cartoon.Location = new System.Drawing.Point(841, 152);
+            this.btn_cartoon.Name = "btn_cartoon";
+            this.btn_cartoon.Size = new System.Drawing.Size(130, 38);
+            this.btn_cartoon.TabIndex = 5;
+            this.btn_cartoon.Text = "Cartoon Effect";
+            this.btn_cartoon.UseVisualStyleBackColor = true;
+            this.btn_cartoon.Click += new System.EventHandler(this.btn_cartoon_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 750);
+            this.Controls.Add(this.btn_cartoon);
             this.Controls.Add(this.btn_paint);
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.Original);
@@ -89,6 +101,7 @@
         private Emgu.CV.UI.ImageBox Original;
         private System.Windows.Forms.Button btn_browse;
         private System.Windows.Forms.Button btn_paint;
+        private System.Windows.Forms.Button btn_cartoon;
     }
 }
 

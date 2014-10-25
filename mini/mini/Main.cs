@@ -41,8 +41,15 @@ namespace mini
 
         private void btn_paint_Click(object sender, EventArgs e)
         {
-            //OilPaint f = new OilPaint(Chosen_File);
-            OilPaint f = new OilPaint("kl");
+            OilPaint f = new OilPaint(Chosen_File);
+          //  OilPaint f = new OilPaint("kl");
+            f.Show();
+        }
+
+        private void btn_cartoon_Click(object sender, EventArgs e)
+        {
+            CartoonPaint f = new CartoonPaint(Chosen_File);
+            //  OilPaint f = new OilPaint("kl");
             f.Show();
         }
     }
