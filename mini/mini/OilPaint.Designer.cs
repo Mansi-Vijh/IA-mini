@@ -36,6 +36,7 @@
             this.lbl_r = new System.Windows.Forms.Label();
             this.lbl_l = new System.Windows.Forms.Label();
             this.btn_show = new System.Windows.Forms.Button();
+            this.My_Timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Result)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,5 +131,6 @@
         private System.Windows.Forms.Label lbl_r;
         private System.Windows.Forms.Label lbl_l;
         private System.Windows.Forms.Button btn_show;
+        private System.Windows.Forms.Timer My_Timer;
     }
 }

@@ -29,7 +29,7 @@ namespace mini
 
         private void btn_Show_Click(object sender, EventArgs e)
         {
-            double th = 30;
+            double th = 20;
             Image<Gray, byte> input = new Image<Gray, byte>(img.Width + 2, img.Height + 2 );
           //  transferring to bigger padded img - "Temp"
             for (int i = 0; i < img.Height; i++)

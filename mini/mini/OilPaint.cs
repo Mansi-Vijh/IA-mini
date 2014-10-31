@@ -9,17 +9,47 @@ using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.Util;
+using System.Windows.Forms;
 
 namespace mini
 {
     public partial class OilPaint : Form
     {
+
+        List<Image<Bgr, Byte>> arr = new List<Image<Bgr, Byte>>();
+       Capture _capture;
         Image<Bgr, byte> img;
         public OilPaint(string loc)
         {
-            InitializeComponent();
-            img = new Image<Bgr, byte>(loc);
+             _capture = new Capture("C:\\Users\\eil\\Downloads\\sample1.wmv");
+             
+               Timer My_Timer = new Timer();
+               My_Timer.Interval = 1000/29;    
+               My_Timer.Tick += new EventHandler(My_Timer_Tick);
+               My_Timer.Start();
+            
+                InitializeComponent();
+               img = new Image<Bgr, byte>(loc);
            // img = new Image<Bgr, Byte>(Properties.Resources.Rose_Amber_Flush_20070601);
+        }
+
+        private void My_Timer_Tick(object sender, EventArgs e)
+        {
+           // string OutFileLocation = "D:\\IIITD\\Sem5\\IA\\IA mini";
+            //if (_capture.QueryFrame() != null)
+            //
+            try
+            {
+                arr.Add(_capture.QueryFrame().Copy());
+              //  Result.Image = arr[0];
+               // _capture.QueryFrame().Save(OutFileLocation + "\\" + "op" + DateTime.Now.Second + "-" + DateTime.Now.Millisecond + ".jpg");
+            }
+            catch(NullReferenceException n)
+            {
+               
+            }
+            //else
+            //{ My_Timer.Stop(); }
         }
         private void btn_click(object sender, EventArgs e)
         {
