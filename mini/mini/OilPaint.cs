@@ -51,7 +51,8 @@ namespace mini
         }
         private void btn_click(object sender, EventArgs e)
         {
-            _capture = new Capture("C:\\pics\\sample1.wmv");
+            _capture = new Capture("C:\\pics\\main.wmv");
+            string OutFileLocation = "C:\\pics\\effects";
 
             Timer My_Timer = new Timer();
             My_Timer.Interval = 1000 / 29;
@@ -59,12 +60,12 @@ namespace mini
             My_Timer.Start();
             int radius = Convert.ToInt32(this.txt_r.Text);
             float intensity = (float)Convert.ToDecimal(this.txt_l.Text);
-            for (int i = 0; i < arr.Count; i++)
+            for (int q= 0; q < arr.Count; q++)
             {
-                img = arr.ElementAt(i);
+                img = arr.ElementAt(q);
 
                 
-                int  j;
+                int  i,j;
                 Image<Bgr, Byte> input = new Image<Bgr, Byte>(img.Width + radius, img.Height + radius);
 
                 //transferring to bigger(padded) image :  "input"
@@ -180,16 +181,28 @@ namespace mini
                 }
                 //this.Result.Image = output;
                 out_arr.Add(output);
+                out_arr[q].Save(OutFileLocation + "\\" + "op" + DateTime.Now.Second + "-" + DateTime.Now.Millisecond + ".jpg");
+               // _capture.QueryFrame().Save(OutFileLocation + "\\" + "op" + DateTime.Now.Second + "-" + DateTime.Now.Millisecond + ".jpg");
             }
             }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //VideoWriter output = new VideoWriter(@"C:\\pics\\result.avi", (int)capture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FOURCC), (int)capture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FPS), (int)capture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH), (int)capture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT), true);
-            VideoWriter output = new VideoWriter("C:\\pics\\result.avi", 30, 320, 240, true);
             int i;
-            for(i=0;i<out_arr.Count;i++)
-                output.WriteFrame(out_arr.ElementAt(i));
+            try
+            {
+                //VideoWriter output = new VideoWriter(@"C:\\pics\\result.avi", (int)capture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FOURCC), (int)capture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FPS), (int)capture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH), (int)capture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT), true);
+                VideoWriter output2 = new VideoWriter("C:\\pics\\original.avi", 29, 320, 240, true);
+                for (i = 0; i < arr.Count; i++)
+                    output2.WriteFrame(arr.ElementAt(i));
+                VideoWriter output = new VideoWriter("C:\\pics\\result.avi", 29, 320, 240, true);
+                for (i = 0; i < out_arr.Count; i++)
+                    output.WriteFrame(out_arr.ElementAt(i));
+            }
+            catch (NullReferenceException en)
+            {
+            }
+            
         }
 
 
