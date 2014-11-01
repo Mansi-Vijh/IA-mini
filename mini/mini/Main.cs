@@ -26,7 +26,7 @@ namespace mini
         {
             openFD.Title = "Insert an Image";
             openFD.FileName = "";
-            openFD.Filter = " TIFF Images|*.tif|JPEG Images|*.jpg|GIF Images|*.gif|BITMAPS|*.bmp|PNG Images|*.png|PICT Images|*.pct";
+           // openFD.Filter = " TIFF Images|*.tif|JPEG Images|*.jpg|GIF Images|*.gif|BITMAPS|*.bmp|PNG Images|*.png|PICT Images|*.pct";
             if (openFD.ShowDialog() == DialogResult.Cancel)
             {
                 MessageBox.Show("Choose image to proceed");
