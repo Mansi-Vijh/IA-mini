@@ -247,7 +247,7 @@ namespace mini
         private void cartoon()
         { 
        
-         double th = 20;
+         double th = 40;
             
             List<Image<Bgr,byte>> painted ;
              oil_paint();
